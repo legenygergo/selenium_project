@@ -1,11 +1,11 @@
 # Selenium
 
-Elöljáróban:
+Links:
 --
 
 Chrome webdrivers: https://sites.google.com/chromium.org/driver/
 
-- fontos, hogy a chrome verziónknak megfelelő legyen a diver
+- it is important that the diver is compatible with our chrome version
 
 Websites to practise selenium: https://www.techbeamers.com/websites-to-practice-selenium-webdriver-online/
 
@@ -15,33 +15,33 @@ Selenium doc: https://selenium-python.readthedocs.io/locating-elements.html
 Setup
 --
 
-Importok:
+Imports:
 
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
     from selenium.webdriver.common.by import By
     import time
 
-Korábbi tutorialokban találkozhatunk ezzel, már elavult, mert bezáródik a böngésző:
+You may have seen this in older tutorials, it is now obsolete because it closes the browser:
 
     path:str = r"C:\Linux_haladó\zips\google_driver\chromedriver.exe"
     mydriver = webdriver.Chrome(path)
 
-Egy megoldás, hogy ne záródjon be:
+A solution, to fix the closing problem:
 
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
 
-    !!!!! ezek után odafigyelni, hogy mydriver = webdriver.Chrome(path, options=chrome_options)
+    !!!!! after that, pay attention to mydriver = webdriver.Chrome(path, options=chrome_options)
 
-    ha mégis azt szeretnénk, hogy bezáródjon: mydriver.quit()
+   if you do want it to close: mydriver.quit()
 
 
-Nyitva a weblap. Hogyan érhetem el az adott részeit, amelyet használni szeretnék?
+The website is open. How can I access the specific parts of the site I want to use?
 --
 
-- Jobbclick az oldalra, vagy pedig akár egy search barra.
+- Rightclick on the site, or for example a search bar
 - Inspect
-- Több dolog szerint érhetjük el ( id, name, class stb.)
+- We can reach it in several ways (id, name, class etc.)
   
-      f_name = mydriver.find_element(By.VALAMI, 'érték')
+      f_name = mydriver.find_element(By.SMTHING, 'value')
