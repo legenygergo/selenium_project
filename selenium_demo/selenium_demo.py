@@ -32,11 +32,15 @@ def phptrav_test(https:str)->None:
     b_name.send_keys("The Rock")
     email.send_keys("dtrj@example.com")
     res.send_keys(str(mysum))
-    
+
     time.sleep(3)
     btn.click()
     time.sleep(3)
     mydriver.refresh()
+    time.sleep(2)
+    mydriver.find_element(By.LINK_TEXT, "Pricing").click()
+    time.sleep(3)
+    mydriver.close()
 
 def phptrav_test_spam(https:str)->None:
     mydriver = open_chrome(https)
@@ -65,6 +69,5 @@ def phptrav_test_spam(https:str)->None:
         mydriver.refresh()
 
 if __name__ == '__main__':
-    # phptrav_test_spam("https://phptravels.com/demo")
-    # open_chrome("https://open.spotify.com/")
-    phptrav_test("https://phptravels.com/demo")
+    # phptrav_test("https://phptravels.com/demo")
+    phptrav_test_spam("https://phptravels.com/demo")
